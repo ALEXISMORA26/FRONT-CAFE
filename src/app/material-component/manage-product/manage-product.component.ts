@@ -15,7 +15,7 @@ import { ConfirmationComponent } from '../dialog/confirmation/confirmation.compo
   styleUrls: ['./manage-product.component.scss']
 })
 export class ManageProductComponent implements OnInit {
-[x: string]: any;
+//[x: string]: any;
 
 
   dispyayedColumns : string[] = ['name','categoryName','description','price','edit'];
@@ -123,7 +123,7 @@ export class ManageProductComponent implements OnInit {
     }
 
     this.productService.updateStatus(data).subscribe((response:any)=>{
-      this.responseMessage = response.message;
+      this.responseMessage = response?.message;
       this.snackbarService.openSnackBar(this.responseMessage,"success");
     },(error:any)=>{
       console.log(error);
